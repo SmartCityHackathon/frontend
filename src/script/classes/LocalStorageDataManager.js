@@ -1,6 +1,7 @@
 export class LocalStorageDataManager {
-    constructor() {
-        this.data = {};
+    constructor(localStorageKey) {
+        this.localStorageKey = localStorageKey;
+        this.data = JSON.parse(localStorage.getItem(localStorageKey) || '{}');
     }
 
     async load() {
@@ -9,5 +10,10 @@ export class LocalStorageDataManager {
 
     async set(key, value) {
         this.data[key] = value;
+        this._save();
+    }
+
+    _save() {
+        localStorage.setItem(this.localStorageKey, JSON.stringify(this.data));
     }
 }
