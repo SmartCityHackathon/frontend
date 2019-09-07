@@ -17,5 +17,15 @@ export class LoadRouteAttributeResolver extends AbstractAttributeResolver {
         // TODO: Check page
 
         await LoadPageAttributeResolver.applyOnElement(element, page);
+
+        if (this.hashChangeHandler) {
+            window.removeEventListener('hashchange', this.hashChangeHandler);
+        }
+
+        this.hashChangeHandler = () => {
+            LoadRouteAttributeResolver.applyOnElement(element);
+        };
+
+        window.addEventListener('hashchange', this.hashChangeHandler);
     }
 }

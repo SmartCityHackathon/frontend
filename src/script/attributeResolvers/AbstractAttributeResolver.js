@@ -1,4 +1,3 @@
-
 export class AbstractAttributeResolver {
     constructor(rootElement) {
         this.rootElement = rootElement;
@@ -25,11 +24,11 @@ export class AbstractAttributeResolver {
     async applyOnCompatibleElements() {
         const elements = this.getCompatibleElements();
 
-        if (!elements.length) {
+        /*if (!elements.length) {
             console.log(
                 `thare are no elements with ${this.__proto__.constructor.dataAttributeKey()}.`,
             );
-        }
+        }*/
 
         for (const element of elements) {
             await this.__proto__.constructor.applyOnElement(
