@@ -8,15 +8,24 @@
         <script src="main.js"></script>
     </head>
     <body>
-        <main></main>
+        <main>
+            <div data-load-page="calendar"></div>
+            <div data-load-page="class"></div>
+        </main>
 
         <script>
             main();
             async function main() {
-                const pageResponse = await fetch(`pages/calendar.html`);
-                const pageHtml = await pageResponse.text();
+                for (const element of document.querySelectorAll(
+                    '*[data-load-page]',
+                )) {
+                    const pageId = element.getAttribute('data-load-page');
 
-                document.querySelector('main').innerHTML = pageHtml;
+                    const pageResponse = await fetch(`pages/${pageId}.html`);
+                    const pageHtml = await pageResponse.text();
+
+                    element.innerHTML = pageHtml;
+                }
 
                 const calendar = new Calendar();
             }

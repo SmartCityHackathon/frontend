@@ -15,13 +15,13 @@ class Calendar {
                 this.isMoving = element.classList.contains('not')
                     ? 'NOT'
                     : 'GOING';
-                changeDate(element, this.isMoving);
+                this.changeDate(element, this.isMoving);
             });
 
             for (const eventType of ['pointerleave', 'pointerenter']) {
                 element.addEventListener(eventType, () => {
                     if (this.isMoving) {
-                        changeDate(element, this.isMoving);
+                        this.changeDate(element, this.isMoving);
                     }
                 });
             }
