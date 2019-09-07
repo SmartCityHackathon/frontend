@@ -35,6 +35,7 @@ for(const element of document.querySelectorAll('td')){
 
 
 document.querySelector('body').addEventListener('pointerup',()=>{
-    moving = false;
+    moving =        
+    false;
 });
 
