@@ -1,0 +1,31 @@
+.outer div{
+    display: inline-block;
+    padding: 20px;
+    font-size: 1.2rem;
+}
+
+
+.outer .inner div.not{
+    background-color: red;
+    color: black;
+}
+
+.outer .inner div{
+    background-color: green;
+    cursor: pointer;
+}
+.outer {
+    width: calc(100% - 220px);
+    overflow-x: scroll;
+    overflow-y: hidden;
+    display: inline-block
+}
+.mon {
+    padding-left: 200px;
+    margin-left: 10px;
+}
+.inner {width: 3000px;}
+button{display: inline-block;
+    height: 50px;
+    width: 100px
+}
