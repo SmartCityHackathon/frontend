@@ -16,4 +16,4 @@ app.use(serveIndex(staticBasePath, {'icons': true}))
 app.listen(PORT);
 
 console.log(`Static server listening on port ${PORT}.`);
-opn(`http://localhost:${PORT}/`);
+opn(`http://localhost:${PORT}/src`);

@@ -6,8 +6,8 @@
   "scripts": {
     "start": "npm run develop-server",
     "develop-server": "node server.js",
-    "prettier": "prettier --config .prettierrc --write \"./src/**/*.{ts,tsx,css,json,js}\"",
-    "prettier-watch": "onchange \"./src/**/*.(ts|tsx|css|json|js)\" -- prettier --config .prettierrc --write \"{{changed}}\""
+    "prettier": "prettier --config .prettierrc --write \"./src/**/*.{html,css,json,js}\"",
+    "prettier-watch": "onchange \"./src/**/*.(html|css|json|js)\" -- prettier --config .prettierrc --write \"{{changed}}\""
   },
   "repository": {
     "type": "git",
