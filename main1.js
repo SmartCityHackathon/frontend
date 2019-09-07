@@ -16,7 +16,7 @@ function left() {
    }
     console.log(p);
 
-    document.querySelector('.outer').scrollLeft -= 50;
+    document.querySelector('.outer').scrollLeft -= 200;
 
 
 }
@@ -26,7 +26,7 @@ function right() {
     console.log(p);
 
 
-    document.querySelector('.outer').scrollLeft += 50;
+    document.querySelector('.outer').scrollLeft += 200;
 
 
 }
