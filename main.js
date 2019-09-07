@@ -1,32 +1,40 @@
 
 
 
-function changeDate(element,moving){
+
+class Calendar{
+
+ changeDate(element,moving){
     if(moving==='GOING'){
         element.classList.add('not')
     }else{
         element.classList.remove('not')
     }
-}
+ }
 
 
 
 
-let isMoving = false;
+
+
+
+ constructor(){
+
+    this.isMoving = false;
 
 for(const element of document.querySelectorAll('td')){
     element.addEventListener('pointerdown',()=>{
     
-        isMoving = element.classList.contains('not')?'NOT':'GOING';
-        changeDate(element,isMoving)
+        this.isMoving = element.classList.contains('not')?'NOT':'GOING';
+        changeDate(element,this.isMoving)
     
     });
 
 
     for(const eventType of ['pointerleave','pointerenter']){
     element.addEventListener(eventType,()=>{
-        if(isMoving){
-            changeDate(element,isMoving);
+        if(this.isMoving){
+            changeDate(element,this.isMoving);
         }
     });
     }
@@ -36,7 +44,12 @@ for(const element of document.querySelectorAll('td')){
 
 document.querySelector('body').addEventListener('pointerup',()=>{
 
-    isMoving = 
+    this.isMoving = 
     false;
 });
 
+ }
+
+
+
+}
