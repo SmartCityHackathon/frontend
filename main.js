@@ -1,14 +1,3 @@
-
-
-function changeDateOld(element){
-    if(element.classList.contains('not')){
-        element.classList.remove('not')
-    }else{
-        element.classList.add('not')
-    }
-}
-
-
 function changeDate(element,moving){
     if(moving==='GOING'){
         element.classList.add('not')
@@ -18,16 +7,11 @@ function changeDate(element,moving){
 }
 
 
-
-
 let moving = false;
 
 for(const element of document.querySelectorAll('td')){
     element.addEventListener('pointerdown',()=>{
-    
         moving = element.classList.contains('not')?'NOT':'GOING';
-        changeDateOld(element)
-    
     });
 
 
@@ -38,7 +22,6 @@ for(const element of document.querySelectorAll('td')){
         }
     });
     }
-
 }
 
 
