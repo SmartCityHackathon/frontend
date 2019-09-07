@@ -13,5 +13,25 @@ td.not{
 td{
     background-color: green;
     cursor: pointer;
+    border: 1px solid black
 }
 table{user-select: none;}
+
+.ahoj td,th{
+    padding: 20px;
+    font-size: 1.2rem;
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+}
+table{
+    border-spacing: 0
+}
+
+.savebutton{
+    width: 448px; height: 80px; margin: 0px auto;
+    background-color: black;
+    color: white;
+
+}
+
