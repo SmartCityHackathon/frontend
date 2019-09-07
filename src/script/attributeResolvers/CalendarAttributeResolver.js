@@ -6,23 +6,55 @@ export class CalendarAttributeResolver extends AbstractAttributeResolver {
         return CALENDAR;
     }
 
-    static async applyOnElement(element) {
-        element.innerHTML = `
+    static async applyOnElement(element /*TODO: maybe, beginDateString*/) {
+        const calendar = [[]];
+
+        for (let day = 0; day < 30; day++) {
+            const date = new Date(
+                new Date().getTime() + day * 1000 * 60 * 60 * 24,
+            );
+
+            calendar[calendar.length - 1].push(date);
+
+            if ((day - 1) % 5 === 0) {
+                calendar.push([]);
+            }
+        }
+
+        console.log('calendar', calendar);
+
+        element.innerHTML =
+            `
         <table>
         <tr>
-        <th>Po</th>
-        <th>Út</th>
-        <th>St</th>
-        <th>Čt</th>
-        <th>Pá</th>
-    </tr>
-    <tr>
-        <td>30.</td>
-        <td>1.</td>
-        <td>2.</td>
-        <td>3.</td>
-        <td>4.</td>
-    </tr>
+            <th>Po</th>
+            <th>Út</th>
+            <th>St</th>
+            <th>Čt</th>
+            <th>Pá</th>
+        </tr>
+        ` +
+            calendar
+                .map(
+                    (calendarRow) =>
+                        `
+            <tr>
+            ` +
+                        calendarRow
+                            .map(
+                                (calendarDate) =>
+                                    `<td>${calendarDate.getDate()}.</td>`,
+                            )
+                            .join('\n') +
+                        `
+            </tr>`,
+                )
+                .join('\n') +
+            `
+
+        <!--
+
+
     <tr>
         <td>7.</td>
         <td>8.</td>
@@ -51,6 +83,8 @@ export class CalendarAttributeResolver extends AbstractAttributeResolver {
         <td>30.</td>
         <td>31.</td>
     </tr>
+
+        -->
 </table>`;
     }
 }
