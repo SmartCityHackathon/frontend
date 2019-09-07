@@ -1,3 +1,6 @@
+
+
+
 function changeDate(element,moving){
     if(moving==='GOING'){
         element.classList.add('not')
@@ -7,11 +10,16 @@ function changeDate(element,moving){
 }
 
 
+
+
 let moving = false;
 
 for(const element of document.querySelectorAll('td')){
     element.addEventListener('pointerdown',()=>{
+    
         moving = element.classList.contains('not')?'NOT':'GOING';
+        changeDate(element,moving)
+    
     });
 
 
@@ -22,6 +30,7 @@ for(const element of document.querySelectorAll('td')){
         }
     });
     }
+
 }
 
 
