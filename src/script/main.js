@@ -1,8 +1,11 @@
+import { LOAD_PAGE } from './dataAttributes.js';
+import { Calendar } from './Calendar.js';
+
 export async function main() {
     let element;
-    while ((element = document.querySelector('*[data-load-page]'))) {
-        const pageId = element.getAttribute('data-load-page');
-        element.removeAttribute('data-load-page');
+    while ((element = document.querySelector(`*[${LOAD_PAGE}]`))) {
+        const pageId = element.getAttribute(LOAD_PAGE);
+        element.removeAttribute(LOAD_PAGE);
 
         const pageResponse = await fetch(`pages/${pageId}.html`);
         const pageHtml = await pageResponse.text();
