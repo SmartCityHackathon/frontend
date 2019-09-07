@@ -30,21 +30,23 @@ th {
     border: 1px solid white;
 }
 
-.calendar .past {
+.calendar td.past,
+.calendar td.day6,
+.calendar td.day7 {
     pointer-events: none;
     cursor: not-allowed;
     opacity: 0.5;
 }
 
-.calendar .today {
-    border: 2px solid red;
+.calendar td.day6,
+.calendar td.day7 {
+    background-color: #aaa;
+    /*filter: grayscale(100%);
+    opacity: 0.9;*/
 }
 
-.calendar .day6,
-.calendar .day7 {
-    pointer-events: none;
-    cursor: not-allowed;
-    opacity: 0.4;
+.calendar .today {
+    border: 2px solid red;
 }
 
 button.save {

@@ -1,3 +1,5 @@
+import { SELECTOR_VALUE } from '../dataAttributes.js';
+
 export class Selector {
     changeDate(element, moving) {
         if (moving === 'GOING') {
@@ -11,6 +13,16 @@ export class Selector {
         this.isMoving = false;
 
         for (const element of document.querySelectorAll('td')) {
+            const defaultValue = JSON.parse(
+                element.getAttribute(SELECTOR_VALUE),
+            );
+            console.log('defaultValue', defaultValue);
+            if (defaultValue) {
+                element.classList.add('not');
+            } else {
+                element.classList.remove('not');
+            }
+
             element.addEventListener('pointerdown', () => {
                 this.isMoving = element.classList.contains('not')
                     ? 'NOT'
