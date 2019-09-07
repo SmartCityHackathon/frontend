@@ -12,21 +12,21 @@ function changeDate(element,moving){
 
 
 
-let moving = false;
+let isMoving = false;
 
 for(const element of document.querySelectorAll('td')){
     element.addEventListener('pointerdown',()=>{
     
-        moving = element.classList.contains('not')?'NOT':'GOING';
-        changeDate(element,moving)
+        isMoving = element.classList.contains('not')?'NOT':'GOING';
+        changeDate(element,isMoving)
     
     });
 
 
     for(const eventType of ['pointerleave','pointerenter']){
     element.addEventListener(eventType,()=>{
-        if(moving){
-            changeDate(element,moving);
+        if(isMoving){
+            changeDate(element,isMoving);
         }
     });
     }
@@ -35,6 +35,6 @@ for(const element of document.querySelectorAll('td')){
 
 
 document.querySelector('body').addEventListener('pointerup',()=>{
-    moving = false;
+    isMoving = false;
 });
 
