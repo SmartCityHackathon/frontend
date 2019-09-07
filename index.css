@@ -6,14 +6,15 @@ td,th{
 
 
 td.not{
-    background-color: red;
+    background-color: rgb(245, 130, 130);
     color: black;
 }
 
 td{
-    background-color: green;
+    background-color: rgb(139, 218, 139);
     cursor: pointer;
-    border: 1px solid black
+    border: 1px solid black;
+    color: black
 }
 table{user-select: none;}
 
