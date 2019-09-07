@@ -1,0 +1,16 @@
+
+td,th{
+    padding: 20px;
+    font-size: 1.2rem;
+}
+
+
+td.not{
+    background-color: red;
+    color: black;
+}
+
+td{
+    background-color: green;
+    cursor: pointer;
+}
