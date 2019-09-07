@@ -1,4 +1,3 @@
-import { Calendar } from './Calendar.js';
 import { MainAttributeResolver } from './attributeResolvers/MainAttributeResolver.js';
 
 export async function main() {

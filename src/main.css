@@ -1,3 +1,8 @@
+table {
+    user-select: none;
+    border-spacing: 0;
+}
+
 td,
 th {
     padding: 20px;
@@ -15,11 +20,8 @@ td {
     border: 1px solid black;
     color: black;
 }
-table {
-    user-select: none;
-}
 
-.ahoj td,
+.teachers td,
 th {
     padding: 20px;
     font-size: 1.2rem;
@@ -27,11 +29,8 @@ th {
     color: white;
     border: 1px solid white;
 }
-table {
-    border-spacing: 0;
-}
 
-.savebutton {
+button.save {
     width: 448px;
     height: 80px;
     margin: 0px auto;
@@ -39,8 +38,8 @@ table {
     color: white;
 }
 
-nav.menu{
-    position:fixed;
+nav.menu {
+    position: fixed;
     top: 0;
     left: 0;
     background-color: black;

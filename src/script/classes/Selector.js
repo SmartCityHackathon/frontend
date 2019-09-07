@@ -1,4 +1,4 @@
-export class Calendar {
+export class Selector {
     changeDate(element, moving) {
         if (moving === 'GOING') {
             element.classList.add('not');

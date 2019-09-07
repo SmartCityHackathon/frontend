@@ -2,6 +2,7 @@ import { AbstractAttributeResolver } from './AbstractAttributeResolver.js';
 import { LoadPageAttributeResolver } from './LoadPageAttributeResolver.js';
 import { LoadRouteAttributeResolver } from './LoadRouteAttributeResolver.js';
 import { CalendarAttributeResolver } from './CalendarAttributeResolver.js';
+import { SelectorAttributeResolver } from './SelectorAttributeResolver.js';
 
 export class MainAttributeResolver extends AbstractAttributeResolver {
     constructor(rootElement) {
@@ -10,6 +11,7 @@ export class MainAttributeResolver extends AbstractAttributeResolver {
             new LoadRouteAttributeResolver(rootElement),
             new LoadPageAttributeResolver(rootElement),
             new CalendarAttributeResolver(rootElement),
+            new SelectorAttributeResolver(rootElement),
         ];
     }
 
@@ -22,7 +24,10 @@ export class MainAttributeResolver extends AbstractAttributeResolver {
             //let applied = 0;
 
             for (const attributeResolver of this.attributeResolvers) {
-                /*applied += */ await attributeResolver.applyOnCompatibleElements();
+                /*applied += */
+                if (await attributeResolver.applyOnCompatibleElements()) {
+                    //await forAnimationFrame();
+                }
             }
             //if (!applied) {
             //    break;
