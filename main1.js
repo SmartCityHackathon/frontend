@@ -9,24 +9,20 @@ for(const element of document.querySelectorAll('.inner div')){
     });
 }
 
-p = 2;
-function left() {
-   if (p>0) {
-       p --;
-   }
-    console.log(p);
 
-    document.querySelector('.outer').scrollLeft -= 200;
+function left() {
+
+
+
+    document.querySelector('.outer').scrollLeft -= 400;
 
 
 }
 
 function right() {
-    p ++;
-    console.log(p);
 
 
-    document.querySelector('.outer').scrollLeft += 200;
+    document.querySelector('.outer').scrollLeft += 400;
 
 
 }

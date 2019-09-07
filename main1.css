@@ -15,7 +15,7 @@
     cursor: pointer;
 }
 .outer {
-    width: calc(100% - 220px);
+    width: calc(100% - 20vw - 10px);
     overflow-x: scroll;
     overflow-y: hidden;
     display: inline-block
@@ -27,5 +27,5 @@
 .inner {width: 3000px;}
 button{display: inline-block;
     height: 50px;
-    width: 100px
+    width: 10vw;
 }
