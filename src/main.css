@@ -1,38 +1,40 @@
-
-td,th{
+td,
+th {
     padding: 20px;
     font-size: 1.2rem;
 }
 
-
-td.not{
+td.not {
     background-color: rgb(245, 130, 130);
     color: black;
 }
 
-td{
+td {
     background-color: rgb(139, 218, 139);
     cursor: pointer;
     border: 1px solid black;
-    color: black
+    color: black;
 }
-table{user-select: none;}
+table {
+    user-select: none;
+}
 
-.ahoj td,th{
+.ahoj td,
+th {
     padding: 20px;
     font-size: 1.2rem;
     background-color: black;
     color: white;
     border: 1px solid white;
 }
-table{
-    border-spacing: 0
+table {
+    border-spacing: 0;
 }
 
-.savebutton{
-    width: 448px; height: 80px; margin: 0px auto;
+.savebutton {
+    width: 448px;
+    height: 80px;
+    margin: 0px auto;
     background-color: black;
     color: white;
-
 }
-
