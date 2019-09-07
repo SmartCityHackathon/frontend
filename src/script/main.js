@@ -2,10 +2,6 @@ import { Calendar } from './Calendar.js';
 import { MainAttributeResolver } from './attributeResolvers/MainAttributeResolver.js';
 
 export async function main() {
-    let element;
-
-    const mainAttributeResolver = new MainAttributeResolver(document);
+    const mainAttributeResolver = new MainAttributeResolver(document.body);
     mainAttributeResolver.run();
-
-    const calendar = new Calendar();
 }

@@ -1,6 +1,7 @@
 import { AbstractAttributeResolver } from './AbstractAttributeResolver.js';
 import { LoadPageAttributeResolver } from './LoadPageAttributeResolver.js';
 import { LoadRouteAttributeResolver } from './LoadRouteAttributeResolver.js';
+import { CalendarAttributeResolver } from './CalendarAttributeResolver.js';
 
 
 export class MainAttributeResolver extends AbstractAttributeResolver {
@@ -9,6 +10,7 @@ export class MainAttributeResolver extends AbstractAttributeResolver {
         this.attributeResolvers = [
             new LoadRouteAttributeResolver(rootElement),
             new LoadPageAttributeResolver(rootElement),
+            new CalendarAttributeResolver(rootElement)
         ];
     }
 

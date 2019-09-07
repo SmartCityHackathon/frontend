@@ -14,7 +14,5 @@ export class LoadPageAttributeResolver extends AbstractAttributeResolver {
 
         element.innerHTML = pageHtml;
 
-
-        console.log('element',element);
     }
 }
