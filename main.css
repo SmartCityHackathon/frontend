@@ -14,3 +14,4 @@ td{
     background-color: green;
     cursor: pointer;
 }
+table{user-select: none;}
