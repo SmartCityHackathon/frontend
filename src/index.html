@@ -5,31 +5,14 @@
         <title>Main page</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" type="text/css" href="main.css" />
-        <script src="main.js"></script>
     </head>
     <body>
         <main>
             <div data-load-page="ForTeachers"></div>
         </main>
-
-        <script>
+        <script type="module">
+            import { main } from './script/main.js';
             main();
-            async function main() {
-                let element;
-                while (
-                    (element = document.querySelector('*[data-load-page]'))
-                ) {
-                    const pageId = element.getAttribute('data-load-page');
-                    element.removeAttribute('data-load-page');
-
-                    const pageResponse = await fetch(`pages/${pageId}.html`);
-                    const pageHtml = await pageResponse.text();
-
-                    element.innerHTML = pageHtml;
-                }
-
-                const calendar = new Calendar();
-            }
         </script>
     </body>
 </html>
