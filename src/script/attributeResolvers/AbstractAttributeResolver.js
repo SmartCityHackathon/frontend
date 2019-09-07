@@ -15,6 +15,10 @@ export class AbstractAttributeResolver {
         throw new Error(`This method shoud be overwrited.`);
     }
 
+    async applyOnElement(element, attributeData) {
+        this.__proto__.constructor.applyOnElement(element, attributeData);
+    }
+
     getCompatibleElements() {
         return this.rootElement.querySelectorAll(
             `*[${this.__proto__.constructor.dataAttributeKey()}]`,
@@ -31,7 +35,7 @@ export class AbstractAttributeResolver {
         }*/
 
         for (const element of elements) {
-            await this.__proto__.constructor.applyOnElement(
+            await this.applyOnElement(
                 element,
                 element.getAttribute(
                     this.__proto__.constructor.dataAttributeKey(),
