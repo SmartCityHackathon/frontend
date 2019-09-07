@@ -1,21 +1,11 @@
-import { AbstractAttributeResolver } from './AbstractAttributeResolver.js';
-import { LoadPageAttributeResolver } from './LoadPageAttributeResolver.js';
-import { LoadRouteAttributeResolver } from './LoadRouteAttributeResolver.js';
-import { CalendarAttributeResolver } from './CalendarAttributeResolver.js';
-import { SelectorAttributeResolver } from './SelectorAttributeResolver.js';
-
-export class MainAttributeResolver extends AbstractAttributeResolver {
-    constructor(rootElement) {
-        super(rootElement);
-        this.attributeResolvers = [
-            new LoadRouteAttributeResolver(rootElement),
-            new LoadPageAttributeResolver(rootElement),
-            new CalendarAttributeResolver(rootElement),
-            new SelectorAttributeResolver(rootElement),
-        ];
+// TODO: Maybe rename
+// TODO: Maybe not a class
+export class MainAttributeResolver {
+    constructor(attributeResolvers) {
+        this.attributeResolvers = attributeResolvers;
     }
 
-    async applyOnCompatibleElements() {
+    async run() {
         //let totalApplied = 0;
 
         while (true) {
