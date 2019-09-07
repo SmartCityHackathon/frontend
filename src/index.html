@@ -15,10 +15,12 @@
         <script>
             main();
             async function main() {
-                for (const element of document.querySelectorAll(
-                    '*[data-load-page]',
-                )) {
+                let element;
+                while (
+                    (element = document.querySelector('*[data-load-page]'))
+                ) {
                     const pageId = element.getAttribute('data-load-page');
+                    element.removeAttribute('data-load-page');
 
                     const pageResponse = await fetch(`pages/${pageId}.html`);
                     const pageHtml = await pageResponse.text();
