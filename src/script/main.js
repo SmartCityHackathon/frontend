@@ -1,17 +1,11 @@
-import { LOAD_PAGE } from './dataAttributes.js';
 import { Calendar } from './Calendar.js';
+import { MainAttributeResolver } from './attributeResolvers/MainAttributeResolver.js';
 
 export async function main() {
     let element;
-    while ((element = document.querySelector(`*[${LOAD_PAGE}]`))) {
-        const pageId = element.getAttribute(LOAD_PAGE);
-        element.removeAttribute(LOAD_PAGE);
 
-        const pageResponse = await fetch(`pages/${pageId}.html`);
-        const pageHtml = await pageResponse.text();
-
-        element.innerHTML = pageHtml;
-    }
+    const mainAttributeResolver = new MainAttributeResolver(document);
+    mainAttributeResolver.run();
 
     const calendar = new Calendar();
 }
