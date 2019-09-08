@@ -9,6 +9,10 @@ export class LocalStorageDataManager {
     }
 
     async set(key, value) {
+        if (!key) {
+            console.warn(`Can not set empty key value.`);
+            rerurn;
+        }
         this.data[key] = value;
         this._save();
     }

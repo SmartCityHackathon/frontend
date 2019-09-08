@@ -32,7 +32,7 @@ export class Selector {
             if (data[element.getAttribute(SELECTOR_KEY)]) {
                 element.classList.add('not');
             } else {
-                element.classList.remove('not');
+                //TODO: ? element.classList.remove('not');
             }
 
             element.addEventListener('pointerdown', () => {
