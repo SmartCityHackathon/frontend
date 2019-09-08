@@ -149,3 +149,13 @@ button:hover {
     max-width: 1000px;
     text-align: left;
 }
+
+@media print {
+    .menu,
+    button {
+        display: none;
+    }
+    td.not::before {
+        content: 'X';
+    }
+}
