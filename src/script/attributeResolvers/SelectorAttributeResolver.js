@@ -3,11 +3,16 @@ import { SELECTOR } from '../dataAttributes.js';
 import { AbstractAttributeResolver } from './AbstractAttributeResolver.js';
 
 export class SelectorAttributeResolver extends AbstractAttributeResolver {
+    constructor(rootElement, dataManager) {
+        super(rootElement);
+        this.dataManager = dataManager;
+    }
+
     static dataAttributeKey() {
         return SELECTOR;
     }
 
-    static async applyOnElement(element) {
-        const selector = new Selector(element);
+    async applyOnElement(element) {
+        new Selector(element, this.dataManager);
     }
 }
