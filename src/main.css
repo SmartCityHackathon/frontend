@@ -43,6 +43,13 @@ th {
     font-size: 1.2rem;
     background-color: #83959f;
     color: white;
+    border: 1px solid #d0d0d0;
+}
+
+.teachers th {
+    background-color: #6d7d86;
+
+    border: 1px solid #918b8b;
 }
 
 .calendar {
