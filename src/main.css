@@ -34,6 +34,10 @@ td {
     color: black;
 }
 
+.teachers {
+    display: inline-table;
+}
+
 .teachers td,
 th {
     font-size: 1.2rem;
@@ -109,10 +113,9 @@ button {
     display: inline-block;
     list-style: none;
     width: 150px;
-    height: 30px;
     background: rgba(0, 0, 0, 0.32);
     text-align: center;
-    padding-top: 12px;
+    padding: 12px;
     margin: 0px;
     color: white;
     outline: none;
