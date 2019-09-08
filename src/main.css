@@ -1,3 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+
+main {
+    margin-top: 160px;
+}
+
 table {
     user-select: none;
     border-spacing: 0;
@@ -30,6 +42,9 @@ th {
     border: 1px solid white;
 }
 
+.calendar {
+    display: inline-block;
+}
 .calendar td.past,
 .calendar td.day6,
 .calendar td.day7 {
@@ -57,27 +72,48 @@ button.save {
     color: white;
 }
 
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    text-align: center;
+    background-color: #ccc;
+
+    box-shadow: #444 0 0 5px;
+}
+
+.menu h1 {
+    display: block;
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    font-size: 1.6em;
+    font-family: 'Pacifico', cursive;
+}
+
 .menu a {
     color: #ffffff;
     font-weight: bolder;
     text-decoration: none;
     text-transform: uppercase;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
-.menu ul li ul {
-    display: none;
+.menu ul {
+    padding: 1;
+    padding-left: 0;
 }
 
 .menu ul li {
-    float: left;
+    display: inline-block;
     list-style: none;
     width: 150px;
     height: 30px;
-    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.32);
     text-align: center;
     padding-top: 12px;
-    border-right: 2px solid white;
+    margin: 0px;
 }
 
 .menu ul li:hover {
@@ -85,17 +121,6 @@ button.save {
     text-align: center;
 }
 
-.menu ul ul {
-    margin-top: 10px;
-}
-
-.menu ul li ul li {
-    margin-left: -40px;
-}
-
-.menu ul li:hover > ul {
-    display: block;
-}
 .menu ul li ul li {
     background: #49bbff;
 }
