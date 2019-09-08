@@ -11,6 +11,7 @@ main {
 }
 
 table {
+    text-align: center;
     user-select: none;
     border-spacing: 0;
 }
@@ -23,23 +24,21 @@ th {
 
 td.not {
     background-color: rgb(245, 130, 130);
-    color: black;
+    color: #000000ab;
 }
 
 td {
     background-color: rgb(139, 218, 139);
     cursor: pointer;
-    border: 1px solid black;
+    border: 1px solid #141414;
     color: black;
 }
 
 .teachers td,
 th {
-    padding: 20px;
     font-size: 1.2rem;
-    background-color: black;
+    background-color: #83959f;
     color: white;
-    border: 1px solid white;
 }
 
 .calendar {
@@ -105,7 +104,8 @@ button.save {
     padding-left: 0;
 }
 
-.menu ul li {
+.menu ul li,
+button {
     display: inline-block;
     list-style: none;
     width: 150px;
@@ -114,9 +114,15 @@ button.save {
     text-align: center;
     padding-top: 12px;
     margin: 0px;
+    color: white;
+    outline: none;
+    border: none;
+    font-size: 1em;
+    font-weight: normal;
 }
 
-.menu ul li:hover {
+.menu ul li:hover,
+button:hover {
     background: rgb(61, 61, 61);
     text-align: center;
 }
@@ -126,4 +132,10 @@ button.save {
 }
 .menu ul li ul li:hover {
     background: #466a7f;
+}
+
+.content {
+    display: inline-block;
+    max-width: 1000px;
+    text-align: left;
 }
