@@ -1,4 +1,4 @@
-import { CALENDAR } from '../dataAttributes.js';
+import { CALENDAR, SELECTOR_KEY, SELECTOR_VALUE } from '../dataAttributes.js';
 import { AbstractAttributeResolver } from './AbstractAttributeResolver.js';
 
 //const SECONDS_DAY = 1000 * 60 * 60 * 24;
@@ -60,7 +60,15 @@ export class CalendarAttributeResolver extends AbstractAttributeResolver {
                                             ? 'today'
                                             : ''
                                     } day${((calendarDate.getDay() + 6) % 7) +
-                                        1}">${calendarDate.getDate()}.</td>`,
+                                        1}"
+                                        
+                                    ${SELECTOR_KEY}="${calendarDate.getFullYear()}-${calendarDate.getMonth() +
+                                        1}-${calendarDate.getDate()}"
+
+                                        ${SELECTOR_VALUE}="${Math.random() >
+                                        0.5}"
+                                        
+                                        >${calendarDate.getDate()}.</td>`,
                             )
                             .join('\n') +
                         `
