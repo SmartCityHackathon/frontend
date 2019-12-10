@@ -30,6 +30,23 @@ th {
     border: 1px solid white;
 }
 
+.calendar .past {
+    pointer-events: none;
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.calendar .today {
+    border: 2px solid red;
+}
+
+.calendar .day6,
+.calendar .day7 {
+    pointer-events: none;
+    cursor: not-allowed;
+    opacity: 0.4;
+}
+
 button.save {
     width: 448px;
     height: 80px;

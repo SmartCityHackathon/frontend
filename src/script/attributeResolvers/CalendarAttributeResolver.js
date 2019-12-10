@@ -1,6 +1,7 @@
 import { CALENDAR } from '../dataAttributes.js';
 import { AbstractAttributeResolver } from './AbstractAttributeResolver.js';
 
+//const SECONDS_DAY = 1000 * 60 * 60 * 24;
 export class CalendarAttributeResolver extends AbstractAttributeResolver {
     static dataAttributeKey() {
         return CALENDAR;
@@ -9,29 +10,34 @@ export class CalendarAttributeResolver extends AbstractAttributeResolver {
     static async applyOnElement(element /*TODO: maybe, beginDateString*/) {
         const calendar = [[]];
 
-        for (let day = 0; day < 30; day++) {
-            const date = new Date(
-                new Date().getTime() + day * 1000 * 60 * 60 * 24,
-            );
+        const currentDate = new Date();
+        const startingDate = new Date(currentDate);
+        startingDate.setDate(
+            currentDate.getDate() - ((currentDate.getDay() + 6) % 7),
+        );
+
+        for (let day = 0; day < 7 * 5; day++) {
+            const date = new Date(startingDate);
+            date.setDate(startingDate.getDate() + day);
 
             calendar[calendar.length - 1].push(date);
 
-            if ((day - 1) % 5 === 0) {
+            if (date.getDay() % 7 === 0) {
                 calendar.push([]);
             }
         }
 
-        console.log('calendar', calendar);
-
         element.innerHTML =
             `
-        <table>
+        <table class="calendar">
         <tr>
-            <th>Po</th>
-            <th>Út</th>
-            <th>St</th>
-            <th>Čt</th>
-            <th>Pá</th>
+            <th class="day1">Po</th>
+            <th class="day2">Út</th>
+            <th class="day3">St</th>
+            <th class="day4">Čt</th>
+            <th class="day5">Pá</th>
+            <th class="day6">So</th>
+            <th class="day7">Ne</th>
         </tr>
         ` +
             calendar
@@ -43,7 +49,18 @@ export class CalendarAttributeResolver extends AbstractAttributeResolver {
                         calendarRow
                             .map(
                                 (calendarDate) =>
-                                    `<td>${calendarDate.getDate()}.</td>`,
+                                    `<td class="${
+                                        calendarDate > currentDate
+                                            ? 'future'
+                                            : ''
+                                    } ${
+                                        calendarDate < currentDate ? 'past' : ''
+                                    } ${
+                                        calendarDate / 1 === currentDate / 1
+                                            ? 'today'
+                                            : ''
+                                    } day${((calendarDate.getDay() + 6) % 7) +
+                                        1}">${calendarDate.getDate()}.</td>`,
                             )
                             .join('\n') +
                         `
